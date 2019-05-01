@@ -1,2 +1,7 @@
 #!/usr/bin/python3
-listint_t *insert_node(listint_t **head, int number);
+for i in range(0, 10):
+    for j in range(i +1, 10):
+        print("{}{}".format(i, j), end="")
+        if i != 8:
+            print(", ", end="")
+print("")
