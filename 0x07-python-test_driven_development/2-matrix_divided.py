@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" divides a matrix by div"""
+
+
 def matrix_divided(matrix, div):
     """Divides every element of a matrix by a number div.
 
@@ -10,7 +13,8 @@ def matrix_divided(matrix, div):
         list: a new matrix.
 
     Raises:
-        Text goes here.
+        ZeroDivisionError
+        TypeError
 
     """
 
@@ -21,7 +25,11 @@ def matrix_divided(matrix, div):
     for row in matrix:
         if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
+    if matrix == []:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     for row in matrix:
+        if row == []:
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         for value in row:
             if not isinstance(value, (int, float)):
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
