@@ -1,0 +1,123 @@
+tests for ''0-add_integer''
+============================
+from ''add_integer''
+---------------------------
+importing:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+int + int:
+    >>> add_integer(1, 1)
+    2
+
+float + float:
+    >>> add_integer(1.0, 1.0)
+    2
+
+str + int:
+    >>> add_integer('foo', 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+int + str:
+    >>> add_integer(2, 'foo')
+    Traceback (most recent call last):
+    	...
+    TypeError: b must be an integer
+
+str + str:
+    >>> add_integer('foo', 'foo2')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+neg + int:
+    >>> add_integer(-2, 2)
+    0
+
+int + neg:
+    >>> add_integer(2, -2)
+    0
+
+neg + neg:
+    >>> add_integer(-2, -2)
+    -4
+
+NaN + int:
+    >>> add_integer(float('nan'), 1)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+int + NaN:
+    >>> add_integer(1, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+NaN + NaN:
+    >>> add_integer(float('nan'), float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+pos_inf + int:
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+int + pos_inf:
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+pos_inf + pos_inf:
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+neg_inf + int:
+    >>> add_integer(float('-inf'), 1)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+int + neg_inf:
+    >>> add_integer(1, float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+neg_inf + neg_inf:
+    >>> add_integer(float('-inf'), float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+x + int:
+    >>> add_integer(x, 1)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'x' is not defined
+
+int + x:
+    >>> add_integer(1, x)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'x' is not defined
+
+No values passed:
+    >>> add_integer(,)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+Too many values passed:
+    >>> add_integer(1,1,1)
+    Traceback (most recent call last):
+    	...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
