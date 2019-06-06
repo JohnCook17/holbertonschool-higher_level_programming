@@ -1,0 +1,40 @@
+importing:
+    >>> test_list = __import__('1-my_list').MyList
+
+correct class type:
+    >>> print(type(test_list))
+    <class 'type'>
+
+correct instance:
+    >>> print(isinstance(test_list, type))
+    True
+
+list of ints:
+    >>> my_list = test_list()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+empty list:
+    >>> my_list = test_list()
+    
+negative ints list:
+    >>> my_list = test_list()
+    >>> my_list.append(-1)
+    >>> my_list.append(1)
+    >>> my_list.append(-4)
+    >>> my_list.append(4)
+    >>> my_list.print_sorted()
+    [-4, -1, 1, 4]
+
+original list:
+    >>> my_list = test_list()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.print_sorted()
+    [1, 2, 3]
