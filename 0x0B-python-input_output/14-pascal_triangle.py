@@ -11,6 +11,6 @@ def pascal_triangle(n):
     for i in range(n):
         row = []
         for e in range(i + 1):
-            row.append(ft(i)/(ft(e)*ft(i-e)))
+            row.append(ft(i)//(ft(e)*ft(i-e)))
         res.append(row)
     return res
