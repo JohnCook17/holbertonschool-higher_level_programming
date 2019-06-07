@@ -7,8 +7,8 @@ def read_lines(filename="", nb_lines=0):
             number += 1
         my_file.seek(0)
         if nb_lines <= 0 or nb_lines >= number:
-            print(my_file.read())
+            print(my_file.read(), end="")
         else:
             while print_lines < nb_lines:
-                print(my_file.readline())
+                print(my_file.readline(), end="")
                 print_lines += 1
