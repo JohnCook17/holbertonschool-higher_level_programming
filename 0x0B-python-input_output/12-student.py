@@ -2,8 +2,7 @@
 
 
 class Student:
-    
-    
+
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -16,5 +15,5 @@ class Student:
         else:
             for key in self.__dict__:
                 if key in attrs:
-                     ats[key] = self.__dict__[key]
+                    ats[key] = self.__dict__[key]
             return ats
