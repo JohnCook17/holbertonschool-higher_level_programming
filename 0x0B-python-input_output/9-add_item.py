@@ -9,5 +9,4 @@ try:
 except:
     obj = []
 if not len(sys.argv) < 2:
-        obj.append(sys.argv[1:])
-my_save.save_to_json_file(obj, "add_item.json")
+    my_save.save_to_json_file(obj + sys.argv[1:], "add_item.json")
