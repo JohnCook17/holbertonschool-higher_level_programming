@@ -83,9 +83,9 @@ class Base:
             import os
             from models.rectangle import Rectangle
             if os.path.exists("Rectangle.json"):
-                with open("Rectangle.json", mode="r", encoding="utf-8") \
+                with open("Rectangle.json", mode="r") \
                         as my_file:
-                    file_data = json.load(my_file)
+                    file_data = cls.from_json_string(my_file.read())
                     r = []
                     for my_dict in file_data:
                         rect = Rectangle.create(**my_dict)
@@ -98,9 +98,9 @@ class Base:
             import os
             from models.square import Square
             if os.path.exists("Square.json"):
-                with open("Square.json", mode="r", encoding="utf-8")\
+                with open("Square.json", mode="r")\
                         as my_file:
-                    file_data = json.load(my_file)
+                    file_data = cls.from_json_string(my_file.read())
                     r = []
                     for my_dict in file_data:
                         rect = Square.create(**my_dict)
