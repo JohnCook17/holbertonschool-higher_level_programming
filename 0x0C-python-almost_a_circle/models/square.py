@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(width=size, height=size, x=x, y=y, id=id)
-        
+
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
@@ -31,7 +33,7 @@ class Square(Rectangle):
         else:
             for key in kwargs:
                 if key == "id":
-                   self.id = kwargs["id"]
+                    self.id = kwargs["id"]
                 if key == "size":
                     self.size = kwargs["size"]
                 if key == "x":
