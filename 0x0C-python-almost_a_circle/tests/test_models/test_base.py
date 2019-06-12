@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 """Test cases for base.py class Base
+These are some basic test to provide 
+documentation on the class Base found
+in base.py
 """
 import unittest
 from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    """Test for base
+    """Test for base:
+    test if base exist
+    test if base id works properly
+    test various aspects of to_json_string
     """
     def test_base_exist(self):
         """Test if base exist
