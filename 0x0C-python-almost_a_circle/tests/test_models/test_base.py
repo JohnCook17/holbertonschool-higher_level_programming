@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 
+
 class TestBase(unittest.TestCase):
     """Test for base
     """
@@ -37,13 +38,14 @@ class TestBase(unittest.TestCase):
         """
         a = Base()
         b = {"width": 10, "height": 7, "x": 2, "y": 8}
-        assert a.to_json_string([b]) == '[{"width": 10, "height": 7, "x": 2, "y": 8}]'
+        assert a.to_json_string([b]) == \
+            '[{"width": 10, "height": 7, "x": 2, "y": 8}]'
 
     def test_to_json_string_bad_type_int(self):
         """Test to see what happens when int is passed
         """
         a = Base()
-        assert a.to_json_string(1) == '1' 
+        assert a.to_json_string(1) == '1'
 
     def test_to_json_string_bad_type_float(self):
         """Test to see what happens when float is passed
