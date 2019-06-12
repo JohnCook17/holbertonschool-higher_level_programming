@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """A base class for the rest of the project
 
 """
+import json
 
 
 class Base:
@@ -21,6 +21,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Takes a list of dicts and changes it to a json string
+        """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
@@ -28,6 +30,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Saves as class_name.json, the contents of list_objs
+        """
         file_name = cls.__name__ + ".json"
         if list_objs is None:
             list_objs = []
@@ -46,6 +50,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """Takes a json string and loads it
+        """
         if json_string is None or not json_string:
             json_string = {}
             return json_string
@@ -54,6 +60,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """Creates a new instance of a class
+        """
         if cls.__name__ == "Rectangle":
             from models.rectangle import Rectangle
             dummy = Rectangle(width=1, height=1, x=0, y=0, id=None)
@@ -69,6 +77,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """Loads a class from a file
+        """
         if cls.__name__ == "Rectangle":
             import os
             from models.rectangle import Rectangle
