@@ -119,7 +119,7 @@ class Base:
             from models.rectangle import Rectangle
             fields = ["id", "width", "height", "x", "y"]
             file_name = cls.__name__ + ".csv"
-            with open(file_name, mode="w+") as csv_file:
+            with open(file_name, mode="w") as csv_file:
                 write_head = 0
                 for obj in list_objs:
                     my_csv = obj.to_dictionary()
@@ -132,7 +132,7 @@ class Base:
             from models.square import Square
             fields = ["id", "size", "x", "y"]
             file_name = cls.__name__ + ".csv"
-            with open(file_name, mode="w+") as csv_file:
+            with open(file_name, mode="w") as csv_file:
                 write_head = 0
                 for obj in list_objs:
                     my_csv = obj.to_dictionary()
