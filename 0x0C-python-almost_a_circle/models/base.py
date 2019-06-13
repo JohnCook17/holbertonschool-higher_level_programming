@@ -156,13 +156,15 @@ class Base:
                     for dct in map(dict, csv_reader):
                         for key in dct:
                             dct[key] = int(dct[key])
-                        retval.append(dct)
+                        rect = Rectangle.create(**dct)
+                        retval.append(rect)
                     return retval
             else:
                 my_file = {}
                 return my_file
         elif cls.__name__ == "Square":
             import os
+            from models.square import Square
             if os.path.exists("Square.csv"):
                 with open("Square.csv", mode="r") as csv_file:
                     retval = []
@@ -170,7 +172,8 @@ class Base:
                     for dct in map(dict, csv_reader):
                         for key in dct:
                             dct[key] = int(dct[key])
-                        retval.append(dct)
+                        sqr = Square.create(**dct)
+                        retval.append(sqr)
                     return retval
             else:
                 my_file = {}
