@@ -3,6 +3,7 @@
 
 """
 import json
+import csv
 
 
 class Base:
@@ -106,6 +107,71 @@ class Base:
                         rect = Square.create(**my_dict)
                         r.append(rect)
                     return r
+            else:
+                my_file = {}
+                return my_file
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        if list_objs is None:
+            list_objs = []
+        if cls.__name__ == "Rectangle":
+            from models.rectangle import Rectangle
+            fields = ["id", "width", "height", "x", "y"]
+            file_name = cls.__name__ + ".csv"
+            with open(file_name, mode="w+") as csv_file:
+                write_head = 0
+                for obj in list_objs:
+                    my_csv = obj.to_dictionary()
+                    dict_writer = csv.DictWriter(csv_file, fieldnames=fields)
+                    if write_head == 0:
+                        dict_writer.writeheader()
+                        write_head = 1
+                    dict_writer.writerow(my_csv)
+        elif cls.__name__ == "Square":
+            from models.square import Square
+            fields = ["id", "size", "x", "y"]
+            file_name = cls.__name__ + ".csv"
+            with open(file_name, mode="w+") as csv_file:
+                write_head = 0
+                for obj in list_objs:
+                    my_csv = obj.to_dictionary()
+                    dict_writer = csv.DictWriter(csv_file, fieldnames=fields)
+                    if write_head == 0:
+                        dict_writer.writeheader()
+                        write_head = 1
+                    dict_writer.writerow(my_csv)
+        else:
+            pass
+
+    @classmethod
+    def load_from_file_csv(cls):
+        if cls.__name__ == "Rectangle":
+            import os
+            from models.rectangle import Rectangle
+            if os.path.exists("Rectangle.csv"):
+                with open("Rectangle.csv", mode="r") as csv_file:
+                    retval = []
+                    csv_reader = csv.DictReader(csv_file)
+                    for dct in map(dict, csv_reader):
+                        for key in dct:
+                            dct[key] = int(dct[key])
+                        retval.append(dct)
+                    return retval
+            else:
+                my_file = {}
+                return my_file
+        elif cls.__name__ == "Square":
+            import os
+            if os.path.exists("Square.csv"):
+                with open("Square.csv", mode="r") as csv_file:
+                    retval = []
+                    csv_reader = csv.DictReader(csv_file)
+                    for dct in map(dict, csv_reader):
+                        for key in dct:
+                            dct[key] = int(dct[key])
+                        retval.append(dct)
+                    return retval
             else:
                 my_file = {}
                 return my_file
