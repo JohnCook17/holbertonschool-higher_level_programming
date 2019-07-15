@@ -1,3 +1,3 @@
-/*Show database*/
-/*shows the databases on the system*/
+--Show database
+--shows the databases on the system
 SHOW DATABASES;
