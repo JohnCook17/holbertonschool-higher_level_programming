@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Selects all states and ids from table
+"""
 
 if __name__ == "__main__":
     import sys
@@ -13,4 +15,5 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     for row in cur.fetchall():
         print (row)
+    cur.close()
     database.close()
