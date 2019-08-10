@@ -2,11 +2,11 @@
 """Selects all states and ids from table
 """
 
-if __name__ == "__main__":
-    import MySQLdb
-    from sys import argv
-    
+import MySQLdb
+from sys import argv
 
+
+if __name__ == "__main__":
     database = MySQLdb.connect(host="localhost",
                                port=3306,
                                charset="utf8",
