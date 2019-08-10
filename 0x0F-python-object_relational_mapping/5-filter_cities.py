@@ -13,6 +13,11 @@ if __name__ == "__main__":
     cur = database.cursor()
     cur.execute(
         "SELECT cities.name FROM cities LEFT JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC", (sys.argv[4],))
-    print (cur.fetchall())
+    res = []    
+    for row in cur.fetchall():
+        res.append(row[0])
+    res = ", ".join(res)
+    print (res)
+    cur.close()
     database.close()
 
