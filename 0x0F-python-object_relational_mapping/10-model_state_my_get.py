@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""Takes user input and checks if that state is in the database,
+if it is it returns the id
+"""
 import MySQLdb
 import sqlalchemy
 from sqlalchemy import create_engine
@@ -19,5 +21,6 @@ if __name__ == "__main__":
         res = state.id
     try:
         print (res)
-    except: 
+    except:
         print ("Not found")
+    session.close()
