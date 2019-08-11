@@ -17,4 +17,4 @@ if __name__ == "__main__":
     states = session.query(State)
     my_query = states.filter(State.name.like("%" + "a" + "%"))
     for state in my_query:
-        print ("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(state.id, state.name))

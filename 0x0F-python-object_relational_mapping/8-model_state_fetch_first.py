@@ -20,6 +20,6 @@ if __name__ == "__main__":
         for row in data:
             res.append(str(row))
         res = ": ".join(res)
-        print (res)
+        print(res)
     else:
         print("Nothing")

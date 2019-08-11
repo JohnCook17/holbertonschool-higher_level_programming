@@ -20,7 +20,7 @@ if __name__ == "__main__":
     for state in my_query:
         res = state.id
     try:
-        print (res)
+        print(res)
     except:
-        print ("Not found")
+        print("Not found")
     session.close()

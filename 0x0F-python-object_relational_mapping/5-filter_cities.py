@@ -17,7 +17,7 @@ if __name__ == "__main__":
     for row in cur.fetchall():
         res.append(row[0])
     res = ", ".join(res)
-    print (res)
+    print(res)
     cur.close()
     database.close()
 

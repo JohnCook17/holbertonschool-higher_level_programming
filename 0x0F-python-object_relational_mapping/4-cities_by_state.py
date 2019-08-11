@@ -18,6 +18,6 @@ if __name__ == "__main__":
         ON cities.state_id = states.id\
         ORDER BY cities.id ASC")
     for row in cur.fetchall():
-        print (row)
+        print(row)
     cur.close()
     database.close()
