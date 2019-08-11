@@ -16,7 +16,7 @@ if __name__ == "__main__":
     states = session.query(State)
     my_query = states.filter(State.name.like("%" + "{}".format(argv[4]) + "%"))
     for state in my_query:
-        if str(state.name) == str(argv[4]):
+        if state.name == argv[4]:
             print (state.id)
         else:
             print ("Not found")
