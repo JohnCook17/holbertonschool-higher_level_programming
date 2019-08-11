@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""Takes an arg and finds the citties with that substring
+"""
 
 if __name__ == "__main__":
     import sys
@@ -12,12 +13,14 @@ if __name__ == "__main__":
                                db=sys.argv[3])
     cur = database.cursor()
     cur.execute(
-        "SELECT cities.name FROM cities LEFT JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC", (sys.argv[4],))
-    res = []    
+        "SELECT cities.name FROM cities\
+        LEFT JOIN states ON cities.state_id = states.id\
+        WHERE states.name = %s ORDER BY cities.id ASC",
+        (sys.argv[4],))
+    res = []
     for row in cur.fetchall():
         res.append(row[0])
     res = ", ".join(res)
     print(res)
     cur.close()
     database.close()
-
