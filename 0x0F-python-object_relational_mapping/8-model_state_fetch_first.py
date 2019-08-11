@@ -14,12 +14,10 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    try:
-        data = session.query(State.id, State.name).first()
+    data = session.query(State.id, State.name).first()
+    if(data):
         res = []
         for row in data:
             res.append(str(row))
         res = ": ".join(res)
         print (res)
-    except:
-        pass
