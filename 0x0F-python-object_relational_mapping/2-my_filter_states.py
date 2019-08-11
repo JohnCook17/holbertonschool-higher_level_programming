@@ -18,6 +18,6 @@ if __name__ == "__main__":
         "SELECT * FROM states WHERE name like BINARY '{}' ORDER BY id ASC"
         .format(sys.argv[4]))
     for row in cur.fetchall():
-        print (row)
+        print(row)
     cur.close()
     database.close()
