@@ -14,9 +14,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State)
-    my_query = states.filter(State.name.like("%" + "{}".format(argv[4]) + "%"))
+    my_query = states.filter(State.name == "{}".format(argv[4]))
     for state in my_query:
-        if state.name == argv[4]:
-            print (state.id)
-        else:
-            print ("Not found")
+        res = state.id
+    try:
+        print (res)
+    except: 
+        print ("Not found")
