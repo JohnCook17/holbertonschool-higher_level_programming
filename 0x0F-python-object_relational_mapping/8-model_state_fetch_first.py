@@ -15,9 +15,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     data = session.query(State.id, State.name).first()
-    if(data):
+    if data:
         res = []
         for row in data:
             res.append(str(row))
         res = ": ".join(res)
         print (res)
+    else:
+        print("Nothing")
