@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""Finds states with the letter a
+"""
 import MySQLdb
 import sqlalchemy
 from sqlalchemy import create_engine
