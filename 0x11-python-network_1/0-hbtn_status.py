@@ -6,4 +6,4 @@ if __name__ == "__main__":
         print("Body response:")
         print("\t- type: {}".format(type(data)))
         print("\t- content: {}".format(print_data))
-        print("\t- utf8 content: {}".format(print_data.decode('utf8')))
+        print("\t- utf8 content: {}".format(print_data.decode('utf-8')))
