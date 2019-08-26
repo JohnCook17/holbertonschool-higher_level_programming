@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from urllib import request
-    with request.urlopen("https://intranet.hbtn.io/status") as data:
+    import urllib.request
+    with urllib.request.urlopen("https://intranet.hbtn.io/status") as data:
         print_data = data.read()
         print("Body response:")
         print("\t- type: {}".format(type(data)))
