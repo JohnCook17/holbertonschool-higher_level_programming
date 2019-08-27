@@ -13,6 +13,7 @@ if __name__ == "__main__":
     else:
         try:
             my_data.json()
-            print("[{}] {}".format(my_data.json()["id"], my_data.json()["name"]))
+            print("[{}] {}"
+                  .format(my_data.json()["id"], my_data.json()["name"]))
         except:
             print("Not a valid JSON")
