@@ -13,7 +13,7 @@ request
       let film = JSON.parse(body).results[i];
       for (const episode in film) {
         film = JSON.parse(body).results[i];
-        if (film && episode) {
+        if (film) {
           const data = film.characters;
           for (const character in data) {
             if (data[character] === 'https://swapi.co/api/people/18/') {
