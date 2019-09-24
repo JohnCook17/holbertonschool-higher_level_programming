@@ -7,7 +7,6 @@ request
     if (error) {
       console.log(error);
     } else {
-      console.log(response.statusCode);
       let count = 0;
       let i = 0;
       let film = JSON.parse(body).results[i];
